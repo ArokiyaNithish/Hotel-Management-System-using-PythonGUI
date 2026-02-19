@@ -259,7 +259,7 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 - GitHub: [@ArokiyaNithish](https://github.com/ArokiyaNithish)
 - LinkedIn: [@Arokiya Nithish J](https://www.linkedin.com/in/arokiya-nithishj/)
-- Email ID : [arokiyanithishj@gmail.com]
+- Email ID : @arokiyanithishj@gmail.com
 - My Portfoilio [Arokiya Nithish](arokiyanithish.github.io/portfolio/)
 
 ## 📞 Support
