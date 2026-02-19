@@ -1,4 +1,4 @@
-# 🏨 Hotel Management System — Python GUI
+# 🏨 Hotel Management System — Python GUI & MySQL Database
 
 A simple and elegant **Hotel Management System** built with **Python (Tkinter)** and **MySQL** that allows hotel staff to manage guest records through an intuitive desktop GUI application. Perform full **CRUD operations** — Create, Read, Update, and Delete guest data — with real-time database connectivity.
 
@@ -225,13 +225,13 @@ The GUI window will launch, and you'll see **"Database is Connected"** printed i
 
 ## 📸 Screenshots
 
-![Hotel Management System Screenshot](Photo%20of%20Hotel%20Management%20System.png)
+![Hotel Management System Screenshot](https://github.com/ArokiyaNithish/Hotel-Management-System-using-PythonGUI/blob/main/images/image1.png)
 
 ---
 
 ## 🎬 Demo Video
 
-![Hotel Management System Demo](Demo%20Video%20of%20Hotel%20Management%20System.gif)
+![Hotel Management System Demo](https://github.com/ArokiyaNithish/Hotel-Management-System-using-PythonGUI/blob/main/images/image2.gif)
 
 ---
 
