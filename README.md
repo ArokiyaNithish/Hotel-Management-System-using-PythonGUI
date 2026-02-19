@@ -253,10 +253,19 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
-## 👤 Author
+# 👨‍💻 Author & Contact
 
-**Arokiya Nithish**
+**Arokiya Nithish J**
+
+- GitHub: [@ArokiyaNithish](https://github.com/ArokiyaNithish)
+- LinkedIn: [@Arokiya Nithish J](https://www.linkedin.com/in/arokiya-nithishj/)
+- Email ID : [arokiyanithishj@gmail.com]
+- My Portfoilio [Arokiya Nithish](arokiyanithish.github.io/portfolio/)
+
+## 📞 Support
+
+For support, email @arokiyanithishj@gmail.com or create an issue in the GitHub repository.
 
 ---
 
-> ⭐ If you found this project helpful, please give it a star on GitHub!
+**⭐ If you find this project useful, please consider giving it a star!**
