@@ -1,2 +1,262 @@
-# Hotel-Management-System-using-PythonGUI
-A simple and elegant Hotel Management System built with Python (Tkinter) and MySQL that allows hotel staff to manage guest records through an intuitive desktop GUI application. Perform full CRUD operations Create, Read, Update, and Delete guest data with real-time database connectivity.
+# 🏨 Hotel Management System — Python GUI
+
+A simple and elegant **Hotel Management System** built with **Python (Tkinter)** and **MySQL** that allows hotel staff to manage guest records through an intuitive desktop GUI application. Perform full **CRUD operations** — Create, Read, Update, and Delete guest data — with real-time database connectivity.
+
+---
+
+##  Table of Contents
+
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Database Schema](#-database-schema)
+- [Project Structure](#-project-structure)
+- [Prerequisites](#-prerequisites)
+- [Installation & Setup](#-installation--setup)
+- [Usage](#-usage)
+- [How It Works](#-how-it-works)
+- [Screenshots](#-screenshots)
+- [Demo Video](#-demo-video)
+- [Contributing](#-contributing)
+- [License](#-license)
+
+---
+
+## ✨ Features
+
+| Feature | Description |
+|---------|-------------|
+| **Insert Data** | Add new guest records (GuestID, Name, Number, City, Room) to the database |
+| **Update Data** | Modify existing guest information by GuestID |
+| **Delete Data** | Remove a guest record from the database using GuestID |
+| **Select / View Data** | View all guest records in a clean tabular format using Treeview |
+| **Clear Fields** | Reset all input fields with a single click |
+| **Error Handling** | User-friendly error messages and input validations |
+| **Real-time DB Sync** | All changes are instantly committed to the MySQL database |
+
+---
+
+## 🛠 Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| **Python 3.x** | Core programming language |
+| **Tkinter** | GUI framework for the desktop interface |
+| **ttk (Treeview)** | Tabular data display widget |
+| **MySQL** | Relational database for persistent data storage |
+| **mysql-connector-python** | Python-MySQL database driver |
+
+---
+
+## 🗄 Database Schema
+
+The application uses a MySQL database named `db` with a single `users` table:
+
+```sql
+CREATE DATABASE db;
+USE db;
+
+CREATE TABLE users (
+    GuestID  VARCHAR(20)  PRIMARY KEY,
+    Name     VARCHAR(100),
+    Number   VARCHAR(15),
+    City     VARCHAR(50),
+    Room     VARCHAR(10)
+);
+```
+
+| Column | Data Type | Constraint | Description |
+|--------|-----------|------------|-------------|
+| `GuestID` | `VARCHAR(20)` | `PRIMARY KEY` | Unique identifier for each guest |
+| `Name` | `VARCHAR(100)` | — | Full name of the guest |
+| `Number` | `VARCHAR(15)` | — | Contact phone number |
+| `City` | `VARCHAR(50)` | — | City of residence |
+| `Room` | `VARCHAR(10)` | — | Assigned room number |
+
+---
+
+## 📁 Project Structure
+
+```
+Hotel-Management-System-Using-python-GUI/
+│
+├── Hotel Management System Using python GUI.py   # Main application source code
+├── Hotel Management System Using python GUI.sql  # MySQL database setup script
+├── Photo of Hotel Management System.png          # Application screenshot
+├── Demo Video of Hotel Management System.gif     # Animated demo of the application
+├── Demo Video of Hotel Management System.mp4     # Video demo of the application
+└── README.md                                     # Project documentation
+```
+
+---
+
+## 📋 Prerequisites
+
+Before running the project, make sure you have the following installed:
+
+1. **Python 3.x** — [Download Python](https://www.python.org/downloads/)
+2. **MySQL Server** — [Download MySQL](https://dev.mysql.com/downloads/mysql/)
+3. **mysql-connector-python** — Python library to connect with MySQL
+
+Install the MySQL connector via pip:
+
+```bash
+pip install mysql-connector-python
+```
+
+---
+
+## 🚀 Installation & Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/<your-username>/Hotel-Management-System-Using-python-GUI.git
+cd Hotel-Management-System-Using-python-GUI
+```
+
+### 2. Set Up the MySQL Database
+
+Open **MySQL Workbench** or the **MySQL command-line client** and run the SQL script:
+
+```bash
+mysql -u root -p < "Hotel Management System Using python GUI.sql"
+```
+
+Or manually execute the following SQL commands:
+
+```sql
+CREATE DATABASE db;
+USE db;
+
+CREATE TABLE users (
+    GuestID VARCHAR(20) PRIMARY KEY,
+    Name VARCHAR(100),
+    Number VARCHAR(15),
+    City VARCHAR(50),
+    Room VARCHAR(10)
+);
+```
+
+### 3. Configure Database Credentials
+
+Open `Hotel Management System Using python GUI.py` and update the connection details on **line 7**:
+
+```python
+con = mysql.connector.connect(
+    host="localhost",
+    user="your_mysql_username",     # Replace with your MySQL username
+    password="your_mysql_password", # Replace with your MySQL password
+    database="db"                   # Database name (must match the SQL script)
+)
+```
+
+### 4. Run the Application
+
+```bash
+python "Hotel Management System Using python GUI.py"
+```
+
+The GUI window will launch, and you'll see **"Database is Connected"** printed in the console if the connection is successful.
+
+---
+
+## 💡 Usage
+
+1. **Insert a Guest Record**
+   - Fill in all the fields: GuestID, Name, Number, City, and Room.
+   - Click **"Insert Data"** to save the record to the database.
+
+2. **Update a Guest Record**
+   - Enter the **GuestID** of the record you want to modify.
+   - Update the other fields as needed.
+   - Click **"Update Data"** to apply the changes.
+
+3. **View All Guest Records**
+   - Click **"Select Data"** to open a new window displaying all records in a table format.
+
+4. **Delete a Guest Record**
+   - Enter the **GuestID** of the record to be removed.
+   - Click **"Delete Data"** to permanently remove the record.
+
+5. **Clear Input Fields**
+   - Click **"Clear Fields"** to reset all entry boxes.
+
+---
+
+## ⚙ How It Works
+
+### Architecture Overview
+
+```
+┌──────────────────────────────┐
+│       Tkinter GUI Layer      │
+│  (Labels, Entry, Buttons)    │
+├──────────────────────────────┤
+│    Application Logic Layer   │
+│  (insert, update, delete,    │
+│   select, clear functions)   │
+├──────────────────────────────┤
+│   mysql.connector Driver     │
+│  (Database Communication)    │
+├──────────────────────────────┤
+│      MySQL Database          │
+│   (db → users table)         │
+└──────────────────────────────┘
+```
+
+### Code Breakdown
+
+| Function | Description |
+|----------|-------------|
+| `insert_data()` | Collects input from entry fields and inserts a new row into the `users` table |
+| `update_data()` | Updates an existing record identified by `GuestID` with new field values |
+| `delete_data()` | Deletes the record matching the provided `GuestID` |
+| `select_data()` | Fetches all records from the `users` table and displays them in a `Treeview` popup |
+| `clear_fields()` | Clears all five entry fields in the GUI |
+
+### GUI Components
+
+- **5 Label–Entry pairs** for `GuestID`, `Name`, `Number`, `City`, and `Room`
+- **5 Buttons**: Insert Data, Update Data, Select Data, Delete Data, Clear Fields
+- **Treeview popup** (via `Toplevel`) for displaying tabular guest data
+- **MessageBox dialogs** for success, error, and warning notifications
+
+---
+
+## 📸 Screenshots
+
+![Hotel Management System Screenshot](Photo%20of%20Hotel%20Management%20System.png)
+
+---
+
+## 🎬 Demo Video
+
+![Hotel Management System Demo](Demo%20Video%20of%20Hotel%20Management%20System.gif)
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! To contribute:
+
+1. **Fork** this repository
+2. **Create** a feature branch (`git checkout -b feature/new-feature`)
+3. **Commit** your changes (`git commit -m "Add new feature"`)
+4. **Push** to the branch (`git push origin feature/new-feature`)
+5. **Open** a Pull Request
+
+---
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
+## 👤 Author
+
+**Arokiya Nithish**
+
+---
+
+> ⭐ If you found this project helpful, please give it a star on GitHub!
