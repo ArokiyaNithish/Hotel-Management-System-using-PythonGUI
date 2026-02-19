@@ -1,0 +1,11 @@
+CREATE DATABASE db;
+USE db;
+CREATE TABLE users (
+    GuestID VARCHAR(20) PRIMARY KEY,
+    Name VARCHAR(100),
+    Number VARCHAR(15),
+    City VARCHAR(50),
+    Room VARCHAR(10)
+);
+SELECT * FROM users;
+
