@@ -231,7 +231,11 @@ The GUI window will launch, and you'll see **"Database is Connected"** printed i
 
 ## 🎬 Demo Video
 
-![Hotel Management System Demo](https://github.com/ArokiyaNithish/Hotel-Management-System-using-PythonGUI/blob/main/images/image2.gif)
+
+
+https://github.com/user-attachments/assets/f2280221-159b-4deb-bcfa-b50cd880d4c6
+
+
 
 ---
 
